@@ -1,0 +1,23 @@
+# Evitar subir archivos innecesarios al contenedor
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignorar entornos virtuales
+env/
+venv/
+
+# Archivos de configuración local
+.env
+.env.*
+
+# Cache de pip
+*.cache
+pip-log.txt
+
+# Otros archivos o carpetas que no necesites en producción
+.idea/
+.vscode/
+.DS_Store
+*.log
