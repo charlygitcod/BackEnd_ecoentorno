@@ -1,5 +1,7 @@
+from typing import Optional
 import bcrypt
 from fastapi import FastAPI, Depends, HTTPException, Query, status
+from sqlalchemy import text
 from sqlalchemy.orm import Session
 from Conexion import create, get_db
 from Modelo import *
@@ -22,7 +24,7 @@ app.add_middleware(
     allow_headers=["*"],  # Permitir todos los encabezados
 )
 
-base.metadata.create_all(bind=create)
+# base.metadata.create_all(bind=create)
 
 # ----------------------------- Registro Pesos -----------------------------
 
@@ -83,7 +85,7 @@ async def crear_usuario(usuario: UsuarioBase, db: Session = Depends(get_db)):
 
 @app.get("/consultarusuarios", response_model=list[UsuarioBase])
 async def obtener_usuarios(
-    query: str = Query("", min_length=3),  # Parámetro de búsqueda con longitud mínima
+    query: Optional[str] = None, # Parámetro de búsqueda con longitud mínima
     db: Session = Depends(get_db)
 ):
     # Realizar la consulta con filtro de búsqueda
@@ -122,6 +124,9 @@ async def eliminar_usuario(documento: int, db: Session = Depends(get_db)):
     db.delete(usuario_existente)
     db.commit()
     return {"message": "Usuario eliminado"}
+
+
+
 
 # ----------------------------- Credenciales -----------------------------
 
