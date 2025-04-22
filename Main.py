@@ -18,7 +18,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://frontendecoentorno-production-e37e.up.railway.app/"],
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],  # Permitir todos los métodos HTTP (GET, POST, PUT, DELETE, etc.)
     allow_headers=["*"],  # Permitir todos los encabezados
