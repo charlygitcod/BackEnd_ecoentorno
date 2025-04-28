@@ -3,7 +3,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 # URL completa proporcionada por Railway
-URL_BD = "mysql+mysqlconnector://root:UPyRvDGilLnqXRqwYHWUPpZhBvnIwtMX@nozomi.proxy.rlwy.net:45516/ecoentorno"
+URL_BD = "mysql+mysqlconnector://root:UPyRvDGilLnqXRqwYHWUPpZhBvnIwtMX@nozomi.proxy.rlwy.net:45516/railway"
 
 # URL_BD = "mysql+mysqlconnector://root:0000@localhost:3306/ecoentorno"
 # URL_BD = "mysql+mysqlconnector://db_admin:admin_adso*@localhost:3366/ecoentorno"
